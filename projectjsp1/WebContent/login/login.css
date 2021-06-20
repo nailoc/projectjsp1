@@ -1,0 +1,46 @@
+section {
+	position: relative;
+	left: 760px;
+}
+div.title_login {
+	margin-top: 180px;
+	margin-bottom: 50px;
+	width: 500px;
+	height: 600px;
+	text-align: center;
+}
+div#login_title img {
+	width: 120px;
+	height: 120px;
+}
+input {
+	width: 350px;
+	height: 50px;
+	padding-left: 20px;
+	font-size: 16px;
+}
+form#loginfrm p {
+	color: #ff0000;
+	font-size: 14px;
+	width: 350px;
+	text-align: left;
+	margin-left: 60px;
+}
+button {
+	width: 380px;
+	height: 60px;
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 18px;
+	letter-spacing: 5px;
+	font-weight: bold;
+	border: none;
+}
+button:hover {
+	cursor: pointer;
+}
+div#id_pw a {
+	font-weight: bold;
+	text-decoration: none;
+	color: #aaaaaa;
+}

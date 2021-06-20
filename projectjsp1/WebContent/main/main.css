@@ -1,0 +1,79 @@
+/* slide */
+div.slideshow {
+	position: relative;
+}
+div.myslide img {
+	width: 1900px;
+	height: 600px;
+}
+a.prev, a.next {
+	position: absolute;
+	color: #000000;
+	top: 50%;
+	padding: 20px;
+	margin-top: -30px;
+	font-weight: bold;
+	font-size: 20px;
+}
+a.next {
+	right: 0;
+}
+a.prev:hover, a.next:hover {
+	cursor: pointer;
+}
+p.page {
+	position: absolute;
+	color: #000000;
+	top: 90%;
+	left: 50%;
+	padding: 20px;
+	margin-top: -20px;
+	font-weight: bold;
+	font-size: 18px;
+}
+/* section */
+section {
+	margin: 0 auto;
+	width: 1400px;
+	height: 680px;
+	padding: 40px;
+}
+p#best {
+	font-size: 28px;
+	font-weight: bold;
+}
+div.best {
+	float: left;
+	margin: 20px;
+	width: 420px;
+}
+div.best img {
+	width: 400px;
+	border: 1px solid #efefef;
+}
+div.best p.brand {
+	color: #888888;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: -10px;
+}
+div.best p.product {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-bottom: -5px;
+}
+div.best p.product a {
+	text-decoration: none;
+	color: #000000;
+}
+span.discount {
+	color: #a49344;
+	font-size: 18px;
+	font-weight: bold;
+}
+span.price {
+	color: #000000;
+	font-size: 18px;
+	font-weight: bold;	
+}

@@ -1,0 +1,197 @@
+div.product_detail {
+	width: 1350px;
+	height: 650px;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+div.product_detail_image {
+	width: 500px;
+	height: 500px;
+	float: left;
+	margin: 50px;
+}
+div.product_detail img {
+	width: 500px;
+}
+div.product_detail_content {
+	width: 600px;
+	height: 500px;
+	float: left;
+	margin: 50px;
+}
+div.product_detail_content p#brand {
+	font-size: 20px;
+	font-weight: bold;
+}
+div.product_detail_content p#product {
+	font-size: 24px;
+	font-weight: bold;
+}
+div.product_detail_content span#discount {
+	font-size: 24px;
+	color: navy;
+}
+div.product_detail_content span#price2 {
+	font-size: 24px;
+	font-weight: bold;
+}
+div.product_detail_content span#price1 {
+	color: #888888;
+	font-size: 20px;
+}
+div.product_detail_content span#delivery_fee {
+	color: #888888;
+	font-weight: bold;
+	margin-right: 20px;
+}
+div.product_detail_content span#free_delivery {
+	font-weight: bold;
+}
+select#product_color, select#product_size {
+	width: 480px;
+	padding: 1.0em .5em;
+	border: 1px solid #999;
+	font-family: inherit;
+	background: url('../images/selectbox_arrow.jpg') no-repeat 95% 50%;
+	border-radius: 0px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	
+}
+select#product_color::-ms-expand, select#product_size::-ms-expand {
+	display: none;
+}
+div.product_detail_content span#total {
+	font-weight: bold;
+} 
+div.product_detail_content span#total-price {
+	margin-left: 350px;
+	font-size: 20px;
+	font-weight: bold;
+	color: navy;
+}
+button {
+	width: 200px;
+	height: 50px;
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	border: none;
+}
+button:hover {
+	cursor: pointer;
+}
+div.product_info_review_QnA {
+	width: 1350px;
+	height: 60px;
+	margin: 0 auto;
+}
+div.product_info, div.product_review, div.product_QnA {
+	float: left;
+	width: 33%;
+	height: 60px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	letter-spacing: 3px;
+	border: 1px solid #666666;
+	cursor: pointer;
+}
+div#info, div#review, div#QnA {
+	width: 1350px;
+	margin: 0 auto;
+}
+div.info_title, div.QnA_title, div.review_title {
+	width: 1000px;
+	margin: 10px auto;
+	margin-top: 100px;
+}
+div.info_title, div.review_title {
+	margin-bottom: 200px;
+}
+div.info_title img {
+	margin: 0 auto;
+}
+button#write_review, button#write_QnA {
+	width: 160px;
+	height: 40px;
+	font-size: 16px;
+	float: right;
+}
+div.write_review {
+	width: 1000px;
+	height: 220px;
+	margin: 30px auto;
+	margin-top: 30px;
+	border-top: 1px solid #000000;
+}
+div.write_review textarea {
+	width: 100%;
+	height: 100px;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	font-size: 16px;
+	resize: none;
+}
+div.product_write_review {
+	width: 1000px;
+	margin: 30px auto;
+	border-top: 2px solid #000000;
+}
+div.write_review button#review_reg {
+	width: 100px;
+	height: 40px;
+	font-size: 16px;
+	float: right;
+}
+span.review_id {
+	margin-left: 20px;
+	margin-bottom: -10px;
+	font-size: 24px;
+	font-weight: bold;
+}
+span.review_date {
+	color: #000000;
+	font-size: 18px;
+	font-weight: bold;
+	float: right;	
+}
+p.review_content {
+	margin-left: 20px;
+}
+div#QnA table {
+	width: 1000px;
+	margin: 30px auto;
+	margin-bottom: 200px;
+	border-spacing: 0;
+}
+div#QnA table thead>tr>td {
+	padding: 10px;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 3px solid navy;
+}
+div#QnA table tbody>tr>td {
+	padding: 10px;
+	text-align: center;
+	border-bottom: 1px solid navy;
+	overflow: hidden;
+	white-space : nowrap;
+	text-overflow: ellipsis;
+}
+td.QnA-no, td.QnA-vote, td.QnA-view {
+	width: 50px;
+}
+td.QnA-title {
+	max-width: 600px;
+}
+td.QnA-user {
+	width: 100px;
+}
+td.QnA-date {
+	width: 120px;
+}

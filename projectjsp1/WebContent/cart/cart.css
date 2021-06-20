@@ -1,0 +1,160 @@
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+	list-style: none;
+	text-decoration: none;
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+	color: #000;
+}
+
+.header {
+	display: flex;
+	width: 1280px;
+	margin: auto;
+	height: 86px;
+}
+
+.nav {
+	display: flex;
+	justify-content: flex-end;
+	line-height: 86px;
+	width: 1280px;
+	border-bottom: 1px solid gray;
+}
+
+.nav > li {
+	margin-left: 84px;
+}
+
+.nav > li > a {
+	color: black;
+}
+
+.intro_text {
+	width: 100%;
+	height: 150px;
+	background: #f1f2f3;
+	text-align: center;
+}
+
+
+
+
+
+.board_wrap {
+	width: 1280px;
+	margin: 100px auto;
+	
+}
+
+.board_product {
+	margin-bottom: 30px;
+	
+}
+
+.board_list {
+	width: 100%;
+	border-top: 2px solid #000;
+	
+}
+
+.board_list > div {
+	border-bottom: 1px solid #ddd;
+	font-size: 0;
+	padding: 10px;
+}
+
+.board_list > div.top {
+	border-bottom: 1px solid #999;
+	
+}
+
+.board_list > div:last-child {
+	border-bottom: 1px solid #000;
+}
+
+.board_list > div > div {
+	display: inline-block;
+	text-align: center;
+	font-size: 12px;
+}
+
+.board_list > div.top > div {
+	font-weight: 600;
+	
+	
+}
+
+.board_list .num {
+	width: 3%;
+}
+
+.board_list .num {
+	width: 7%;
+	text-align: center;
+
+}
+
+.board_list .image {
+	width: 20%;
+	text-align: left;
+
+}
+
+.board_list .product {
+	width: 35%;
+	text-align: left;
+	
+}
+
+.board_list .top .product {
+	text-align: center;
+}
+
+.board_list .count {
+	width: 10%;
+}
+
+.board_list .price {
+	width: 15%;
+}
+
+.board_list .size {
+	width: 10%;
+	text-align: center;
+	
+}
+
+.bt_wrap {
+	margin-top: 30px;
+	text-align: center;
+	font-size: 0;
+}
+
+.bt_wrap a {
+	display: inline-block;
+	min-width: 80px;
+	margin-left: 10px;
+	padding: 15px;
+	border: 1px solid #000;
+	border-radius: 2px;
+	font-size: 15px;
+}
+
+.bt_wrap a:first-child {
+	margin-left: 0;
+}
+
+.bt_wrap a.on {
+	background: #000;
+	color: #fff;
+}
+
+div.product {
+	text-align: center;
+}
+
+.product {
+	height: 40px;
+}

@@ -1,0 +1,134 @@
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+	list-style: none;
+	text-decoration: none;
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+	color: #000;
+}
+button {
+	width: 120px;
+	height: 40px;
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	border: none;
+}
+button:hover {
+	cursor: pointer;
+}
+.board_wrap {
+	width: 1000px;
+	margin: 100px auto;
+	
+}
+
+.board_title {
+	margin-bottom: 30px;
+	
+}
+
+.board_title strong {
+	font-size: 3rem;
+}
+
+.board_title p {
+	margin-top: 5px;
+	font-size: 1.4rem;
+	
+	
+}
+
+.board_list {
+	width: 100%;
+	border-top: 2px solid #000;
+	
+}
+
+.board_list > div {
+	border-bottom: 1px solid #ddd;
+	font-size: 0;
+	padding: 10px;
+}
+.date {
+	margin-left : 20px;
+}
+.board_list > div.top {
+	border-bottom: 1px solid #999;
+	
+}
+
+.board_list > div:last-child {
+	border-bottom: 1px solid #000;
+}
+
+.board_list > div > div {
+	display: inline-block;
+	text-align: center;
+	font-size: 14px;
+}
+
+.board_list > div.top > div {
+	font-weight: 600;
+}
+
+.board_list .num,.writer {
+	width: 10%;
+
+}
+
+
+.board_list .category {
+	width: 20%;
+	text-align: left;
+}
+
+.board_list .top .title {
+	text-align: center;
+}
+
+.board_list .title {
+	width: 70%;
+}
+
+
+.board_page {
+	margin-top: 30px;
+	text-align: center;
+	font-size: 0;
+}
+
+.board_page a {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	border-left: 0;
+	vertical-align: middle;
+	border-left: 0;
+	line-height: 100%;
+}
+
+.board_page a.bt {
+	padding-top: 10px;
+	font-size: 12px;
+	letter-spacing: -1px;
+}
+
+.board_page a.num {
+	padding-top: 9px;
+	font-size: 12px;
+}
+
+.board_page a.num.on {
+	border-color: #000;
+	background: #000;
+	color: #fff;
+}
+
+.board_page a:first-child {
+	border-left: 1px solid #ddd;
+}

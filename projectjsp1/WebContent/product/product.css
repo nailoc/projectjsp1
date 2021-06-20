@@ -1,0 +1,30 @@
+section.product {
+	width: 1596px;
+	height: 698px;
+	float: left;
+}
+div.products_image {
+	width: 250px;
+	height: 360px;
+	margin: 50px;
+	float: left;
+}
+div.products_image:hover {
+	cursor: pointer;
+}
+div.products_image img {
+	width: 100%;
+}
+div.products_image p#product_brand {
+	margin-bottom: -10px;
+	font-weight: bold;
+}
+div.products_image p#product_name {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-bottom: -5px;
+}
+div.products_image p#product_price {
+	font-weight: bold;
+}

@@ -1,0 +1,86 @@
+section {
+	width: 1200px;
+	margin: 0 auto;
+	height: 800px;
+}
+section div.content_wrapper {
+	margin: 200px auto;
+}
+#iboard-thumbnail-editor { overflow: hidden;}
+#iboard-thumbnail-editor form { margin: 0; padding: 0; }
+#iboard-thumbnail-editor select { display: inline; margin: 0; padding: 0 5px; font-size: 14px; width: 30%; height: 28px; line-height: 28px; color: #666666; border-radius: 0; border: 0; border-bottom: 1px solid #dcdcdc; box-shadow: none; background: none; background-color: transparent; box-sizing: content-box; vertical-align: middle; text-indent: 0; -webkit-appearance: menulist; -moz-appearance: menulist; appearance: menulist; }
+#iboard-thumbnail-editor input[type=text],
+#iboard-thumbnail-editor input[type=email],
+#iboard-thumbnail-editor input[type=number],
+#iboard-thumbnail-editor input[type=date],
+#iboard-thumbnail-editor input[type=password] { display: inline; margin: 0; padding: 0 5px; width: 30%; height: 28px; line-height: 28px; font-size: 14px; color: #666666; border-radius: 0; border: 0; border-bottom: 1px solid #dcdcdc; box-shadow: none; background: none; background-color: transparent; box-sizing: content-box; vertical-align: middle; }
+#iboard-thumbnail-editor input[type=checkbox] { width: auto; -webkit-appearance: checkbox; -moz-appearance: checkbox; appearance: checkbox; }
+#iboard-thumbnail-editor input[type=radio] { width: auto; -webkit-appearance: radio; -moz-appearance: radio; appearance: radio; }
+#iboard-thumbnail-editor select:hover,
+#iboard-thumbnail-editor input[type=text]:hover,
+#iboard-thumbnail-editor input[type=email]:hover,
+#iboard-thumbnail-editor input[type=number]:hover,
+#iboard-thumbnail-editor input[type=date]:hover,
+#iboard-thumbnail-editor input[type=password]:hover { border-bottom: 1px solid #9e9e9e; }
+#iboard-thumbnail-editor select:focus,
+#iboard-thumbnail-editor input[type=text]:focus,
+#iboard-thumbnail-editor input[type=email]:focus,
+#iboard-thumbnail-editor input[type=number]:focus,
+#iboard-thumbnail-editor input[type=date]:focus,
+#iboard-thumbnail-editor input[type=password]:focus { border-bottom: 2px solid #9e9e9e; }
+#iboard-thumbnail-editor input[type=file] { display: inline; margin: 0; padding: 0; width: 30%; font-size: 13px; color: #666666; border-radius: 0; border: 0; box-shadow: none; background-color: transparent; }
+#iboard-thumbnail-editor .iboard-attr-title input { width: 70%; }
+#iboard-thumbnail-editor .iboard-attr-row { float: left; padding: 5px 0; width: 100%; background-color: white; }
+#iboard-thumbnail-editor .iboard-attr-row .attr-name { display: inline; float: left; margin: 0; padding: 0 10px 0 10px; width: 120px; line-height: 32px; color: #545861; font-size: 14px; font-weight: bold; }
+#iboard-thumbnail-editor .iboard-attr-row .attr-name img { display: inline; margin: 0; padding: 0; width: auto; max-width: 100%; vertical-align: middle; }
+#iboard-thumbnail-editor .iboard-attr-row .attr-name .attr-required-text { color: red; font-weight: normal; font-size: 13px; }
+#iboard-thumbnail-editor .iboard-attr-row.iboard-attr-content .attr-name { display: none; }
+#iboard-thumbnail-editor .iboard-attr-row .attr-value { margin: 0 0 0 140px; padding: 0; line-height: 32px; font-size: 14px; }
+#iboard-thumbnail-editor .iboard-attr-row .attr-value .attr-value-option { display: inline; padding-right: 20px; width: auto; font-size: 14px; cursor: pointer; }
+#iboard-thumbnail-editor .iboard-attr-row .attr-value .attr-value-option input { cursor: pointer; }
+#iboard-thumbnail-editor .iboard-attr-row .attr-value .attr-value-label { display: inline; padding-right: 10px; width: auto; cursor: pointer; }
+#iboard-thumbnail-editor .iboard-attr-row .attr-value .attr-value-label input { cursor: pointer; }
+#iboard-thumbnail-editor .iboard-attr-row .attr-value .description { margin: 0; color: #666666; }
+#iboard-thumbnail-editor .iboard-attr-row .attr-value .iboard-tree-category-wrap { overflow: hidden; }
+#iboard-thumbnail-editor .iboard-attr-row .attr-value .iboard-tree-category-wrap select { clear: both; float: left; margin-bottom: 5px; width: 30%; }
+#iboard-thumbnail-editor .iboard-content { float: left; margin: 0; padding: 9px 0; width: 100%; background-color: white; }
+#iboard-thumbnail-editor .iboard-content .editor-textarea { display: inline; margin: 0; padding: 5px; width: 100%; min-width: 100%; max-width: 100%; height: 150px; min-height: 0; font-size: 14px; border: 1px solid #dcdcdc; box-shadow: none; background: none; background-color: transparent; box-sizing: border-box; text-indent: 0; }
+#iboard-thumbnail-editor .iboard-control { float: left; padding: 15px 0; width: 100%; }
+#iboard-thumbnail-editor .iboard-control .left { position: static; float: left; }
+#iboard-thumbnail-editor .iboard-control .right { position: static; float: right; width: 50%; text-align: right; }
+#iboard-thumbnail-editor.confirm { margin: 100px auto; max-width: 590px; }
+#iboard-thumbnail-editor.confirm input[type=password] { width: 100%; box-sizing: border-box; }
+#iboard-thumbnail-editor select,
+#iboard-thumbnail-editor input[type=text],
+#iboard-thumbnail-editor input[type=email],
+#iboard-thumbnail-editor input[type=number],
+#iboard-thumbnail-editor input[type=date],
+#iboard-thumbnail-editor input[type=password],
+#iboard-thumbnail-editor input[type=file] { width: 100% !important; box-sizing: border-box; }
+#iboard-thumbnail-editor .iboard-attr-row { padding: 10px 0; }
+#iboard-thumbnail-editor.confirm { max-width: none; }
+
+#iboard-default-document .iboard-attr-row { float: left; padding: 5px 0; width: 100%; background-color: white; }
+#iboard-default-document .iboard-attr-row .attr-name { display: inline; float: left; margin: 0; padding: 0 10px 0 10px; width: 130px; line-height: 32px; color: #545861; font-size: 14px; font-weight: bold; }
+#iboard-default-document .iboard-attr-row .attr-name img { display: inline; margin: 0; padding: 0; width: auto; max-width: 100%; vertical-align: middle; }
+#iboard-default-document .iboard-attr-row .attr-name .attr-required-text { color: red; font-weight: normal; font-size: 13px; }
+#iboard-default-document .iboard-attr-row.iboard-attr-content .attr-name { display: none; }
+#iboard-default-document .iboard-attr-row .attr-value { margin: 0 0 0 140px; padding: 0; line-height: 32px; font-size: 14px; }
+#iboard-default-document .iboard-attr-row .attr-value .attr-value-option { display: inline; padding-right: 20px; width: auto; font-size: 14px; cursor: pointer; }
+#iboard-default-document .iboard-attr-row .attr-value .attr-value-option input { cursor: pointer; }
+#iboard-default-document .iboard-attr-row .attr-value .attr-value-label { display: inline; padding-right: 10px; width: auto; cursor: pointer; }
+#iboard-default-document .iboard-attr-row .attr-value .attr-value-label input { cursor: pointer; }
+#iboard-default-document .iboard-attr-row .attr-value p { display: inline; margin: 0; padding: 0; width: 30%; font-size: 13px; color: #666666; border-radius: 0; border: 0; box-shadow: none; background-color: transparent;  }
+
+button {
+	width: 120px;
+	height: 40px;
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	border: none;
+}
+button:hover {
+	cursor: pointer;
+}

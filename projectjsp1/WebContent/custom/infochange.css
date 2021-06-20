@@ -1,0 +1,44 @@
+section {
+	position: relative;
+	left: 700px;
+	margin-bottom: 200px;
+}
+div.admin {
+	margin-top: 140px;
+	width: 600px;
+	height: 900px;
+}
+form.content input {
+	width: 500px;
+	height: 40px;
+	font-size: 16px;
+}
+input#sample6_postcode {
+	width: 180px;
+}
+input#zipsearch {
+	width: 120px;
+}
+input#zipsearch:hover {
+	cursor: pointer;
+}
+button {
+	width: 370px;
+	height: 60px;
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 18px;
+	letter-spacing: 5px;
+	font-weight: bold;
+	border: none;
+	margin-left: 75px;
+}
+button:hover {
+	cursor: pointer;
+}
+div.content p {
+	font-weight: bold;
+}
+p.none {
+	color: #ff0000;
+}
