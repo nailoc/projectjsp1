@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.hk.jsp.dao.*" %>
 <%@ page import="com.hk.jsp.vo.*" %>
+<%@ page import="java.util.*" %>
 <%@ page import="com.oreilly.servlet.*" %>
 <%@ page import="com.oreilly.servlet.multipart.*" %>
 <!DOCTYPE html>
@@ -30,7 +31,7 @@
 				                                      new DefaultFileRenamePolicy());
 				String no = multi.getParameter("num");
 				String title = multi.getParameter("title");
-		
+				String category = multi.getParameter("category");
 				String ck_contents = multi.getParameter("contents");
 				String upfileName = multi.getFilesystemName("attach1");  // 첨부파일 1번
 			
@@ -39,21 +40,22 @@
 			
 				//out.println("확인:"+upfileName);
 				
-				BoardVo bVo = new BoardVo();
+				PopVo bVo = new PopVo();
 				bVo.setTitle(title);
+				bVo.setCategory(category);
 				bVo.setContents(ck_contents);
 				bVo.setAttach1(upfileName);
 				bVo.setNo(Integer.parseInt(no));
 	
 				// BoardDao 에서 데이터저장
-				BoardDao brddao = BoardDao.getInstance();
+				PopDao brddao = PopDao.getInstance();
 				int result = brddao.editBoard(bVo);
 				
 				// 성공이면 목록으로 이동, 실패면 글쓰기폼으로 이동
 				if(result == 1) {
-			out.println("<script>alert('글수정했습니다'); location.href='notice.jsp'</script>");			
+			out.println("<script>alert('글수정했습니다'); location.href='custom.jsp'</script>");			
 				}else{
-			out.println("<script>alert('글저장을 실패했습니다'); location.href='notice.jsp'</script>");
+			out.println("<script>alert('글저장을 실패했습니다'); location.href='custom.jsp'</script>");
 				}
 		%>
 	

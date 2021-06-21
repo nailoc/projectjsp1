@@ -18,7 +18,7 @@
 			//String ck_contents = request.getParameter("contents");
 		
 			// 파일을 업로드 하는 경우 cos.jar 사용해서 전송값을 저장
-			String uploadPath = "D:\\upload";
+			String uploadPath = "C:\\Users\\admin\\git\\projectjsp1\\projectjsp1\\WebContent\\upload";
 			int maxSize = 1024*1024*10; // 10메가 - 바이트기준으로  
 			MultipartRequest multi = new MultipartRequest(request, 
 			                                      uploadPath, 
@@ -28,7 +28,7 @@
 			
 			String title = multi.getParameter("title");
 			String writeName = multi.getParameter("write_name");
-			
+			String category = multi.getParameter("category");
 			String ck_contents = multi.getParameter("contents");
 			String upfileName = multi.getFilesystemName("attach1");  // 첨부파일 1번
 			
@@ -41,6 +41,7 @@
 			PopVo writeVo = new PopVo();
 			writeVo.setTitle(title);
 			writeVo.setWrite_name(writeName);
+			writeVo.setCategory(category);
 			// 디비에서 컬럼이 생략됨
 			writeVo.setContents(ck_contents);
 			writeVo.setAttach1(upfileName);

@@ -3,8 +3,6 @@
 	list-style: none;
 	text-decoration: none;
 	border-collapse: collapse;
-	margin: 0px;
-	padding: 0px;
 	color: #000;
 }
 button {
@@ -187,7 +185,7 @@ h1 {
 }
 
 .board_list .title {
-	width: 70%;
+	width: 50%;
 }
 
 

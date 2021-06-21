@@ -1,17 +1,19 @@
 package com.hk.jsp.vo;
 
-public class QnAVo {
+public class QnaVo {
 	
-	public int no;
-	public String title;
-	public String contents;
-	public String write_id;
-	public String write_name;
-	public String regdate;
-	public int views;
-	public String attach1;
-	public String attach2;
-	
+	private int no;
+    private String title;
+    private String contents;
+    private String write_id;
+    private String p_no;
+    private String regdate;
+   
+    private int views;
+    private String attach1;
+    private String attach2;
+    
+    
 	public int getNo() {
 		return no;
 	}
@@ -36,11 +38,11 @@ public class QnAVo {
 	public void setWrite_id(String write_id) {
 		this.write_id = write_id;
 	}
-	public String getWrite_name() {
-		return write_name;
+	public String getP_no() {
+		return p_no;
 	}
-	public void setWrite_name(String write_name) {
-		this.write_name = write_name;
+	public void setP_no(String p_no) {
+		this.p_no = p_no;
 	}
 	public String getRegdate() {
 		return regdate;
@@ -67,5 +69,5 @@ public class QnAVo {
 		this.attach2 = attach2;
 	}
 	
-
+    
 }

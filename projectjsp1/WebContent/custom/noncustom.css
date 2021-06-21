@@ -1,0 +1,13 @@
+.intro_text {
+	margin: 100px auto 200px auto;
+}
+section form input#nouser_no, section form input#pw {
+	width: 150px;
+	height: 30px;
+	font-size: 20px;
+	border: 2px solid lightblue;
+}
+section form input button {
+	width: 150px;
+	height: 30px;
+}

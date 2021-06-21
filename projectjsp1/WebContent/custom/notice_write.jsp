@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ page import="com.hk.jsp.dao.*" %>
-<%@ page import="com.hk.jsp.vo.*" %>
-<%@	page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset=UTF-8>
-<title>QnA</title>
+<title>공지사항 작성란</title>
 <link rel="stylesheet" href="../main/header_footer.css"></link>
 <link rel="stylesheet" href="write_QnA.css"></link>
 <style></style>
@@ -15,19 +12,13 @@
 	<div class="wrapper">
 	
 		<%@ include file="../main/header.jsp" %>
-
-<%
-
-QnaDao board = QnaDao.getInstance();
-String id = (String)session.getAttribute("userID");
-String p_no = request.getParameter("p_no");
-%>		
+		
 		<section>
 			<div class="content_wrapper">	
-				<h2>상품 Q&A</h2>
+				<h2>공지사항 작성란</h2>
 				<div id="iboard-thumbnail-editor">
-					<form class="iboard-form" id="frm_write" method="POST" action="write_QnaPro.jsp" enctype="multipart/form-data">
-					<input type="hidden" name="p_no" value="<%=p_no %>">
+					<form class="iboard-form" id="frm_write" method="POST" action="noticewrtpro.jsp" enctype="multipart/form-data">
+					
 					<input type="hidden" name="board_id" value="hidden_val">
 						<div class="iboard-attr-row iboard-attr-title">
 							<label class="attr-name" for="title">
@@ -44,7 +35,7 @@ String p_no = request.getParameter("p_no");
 							<span class="field-name">작성자</span>
 							<span class="attr-required-text">*</span></label>
 							<div class="attr-value">
-								<input type="text" id="iboard-input-member-display" name="write_id" value="<%=id %>">
+								<input type="text" id="iboard-input-member-display" name="write_name" value="관리자">
 							</div>
 						</div>
 				

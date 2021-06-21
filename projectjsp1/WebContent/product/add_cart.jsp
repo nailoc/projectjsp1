@@ -17,7 +17,14 @@
 		String p_no = "";
 		
 		id = (String)session.getAttribute("userid");
-		p_no = (String)session.getAttribute("p_no");
+		p_no = request.getParameter("p_no");
+		
+		String outputsize = request.getParameter("size");
+		String[] splitsize = outputsize.split("");
+		String size = splitsize[0];
+		if(size.equals("[")){
+			out.println("<script>alert('사이즈를 선택해주세요.'); history.back();</script>");
+		}else {
 		
 		UserDao userdao = UserDao.getInstance();
 		ProductVo provo = userdao.check_Addcart(p_no);
@@ -26,9 +33,7 @@
 		String img = provo.getImg();
 		String name = provo.getName();
 		
-		String outputsize = request.getParameter("size");
-		String[] splitsize = outputsize.split("");
-		String size = splitsize[0];
+		
 		
 		int amount=1;
 		int price = provo.getPrice();
@@ -54,6 +59,8 @@
 			
 		}else {
 			out.println("<script>alert('장바구니 등록 실패'); history.back();</script>");
+		}
+		
 		}
 		
 	%>

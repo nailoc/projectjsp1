@@ -77,20 +77,32 @@ if(keywordval==null) {
 				<a href="" class="bt next">></a>
 				<a href="" class="bt last">>></a>	
 			</div>
+<%
+String id = (String)session.getAttribute("userid");
+
+
+	if(id == null) {
+	
+
+	}else if(id.equals("admin")){
+%>			
 			<div>
-			<button onclick="location.href='write_notice.jsp'">글작성</button>
+			<button onclick="location.href='notice_write.jsp'">글작성</button>
 			</div>
+<%
+}else {}
+%>
 	</div>
 	</div>
 	</div>
 	</section>
 		
+<%@ include file="../main/footer.jsp" %>
 		
 			
 </div>  
 		
 		
-<%@ include file="../main/footer.jsp" %>
 
 </body>
 <script src="../js/jquery-3.6.0.min.js"></script>

@@ -6,6 +6,7 @@ function login() {
 	$("p#none1, p#none2, p#none3").hide();
 	var id = $("#id").val();
 	var pw = $("#pw").val();
+	var loginfrm = document.getElementById("loginfrm");
 	if(id=="") {
 		$("p#none1").show();
 	}

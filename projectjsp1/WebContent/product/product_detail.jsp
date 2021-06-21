@@ -23,6 +23,7 @@
 	ProductVo provo = prodao.proDetail1(p_no);
 	P_detailVo pdvo = pddao.proDetail2(p_no);
 	
+	String id= (String)session.getAttribute("userid");
 %>
 <body>
 	<div class="wrapper">
@@ -54,7 +55,7 @@
 						</select>
 						<p id="price"><span id="total">총 상품 금액</span><span id="total-price">0원</span></p>
 						<br>
-						<button onclick="cart_add();">장바구니</button>&nbsp;
+						<button onclick="cart_add(<%=id%>);">장바구니</button>&nbsp;
 						<button type="submit" <%if(session.getAttribute("userid")!=null){ %>formaction="../cart/pay.jsp"<%}else { %>formaction="../custom/reg_nouser.jsp"<%} %> formmethod="post">바로 구매</button>
 					</div>
 				</div>
@@ -87,47 +88,91 @@
 					<h2 class="review">상품리뷰
 						<button type="button" id="write_review" onclick="show_write_review();">상품 리뷰 작성하기</button>
 					</h2>
+			
+<!-- 리뷰창 -->		
+<%
+	ReplyDao rdao = ReplyDao.getInstance();
+	List<ReplyVo> resultRe = rdao.getReplyList(p_no);
+%>			
+		<form class="" id="frm_write" 
+		      method="POST" action="reply_writePro.jsp"> 
+		
+		<input type="hidden" name="" value="hidden_val">
+		<input type="hidden" name="p_no" value="<%=p_no %>">
 					
-					
+		
 					<div class="write_review">
-						<p>
-							<span class="review_id">dkdlel0611</span>
-							<span class="review_date">2021-06-11</span>
-						</p>
-						<br>
-						<textarea placeholder="리뷰를 작성해주세요!"></textarea>
-						<button id="review_reg">리뷰 등록</button>
+						<textarea name="contents" placeholder="리뷰를 작성해주세요!"></textarea>
+						<button type="button" id="review_reg" onclick="reply_write();">리뷰 등록</button>
 					</div>
-					<!-- 리뷰내용 -->
+		
+
+</form>
+
+<!-- 리뷰내용 -->
+<%
+
+
+
+	
+    
+if(resultRe.size() == 0) {
+	out.println("<p>댓글이 없습니다</p>");
+}else {
+	for(int i=0; i<resultRe.size(); i++) {
+		ReplyVo rr = resultRe.get(i);
+	
+	
+%>
+
 					<div class="product_write_review">
 						<p>
-							<span class="review_id">dkdlel0611</span>
-							<span class="review_date">2021-06-11</span>
+							<span class="review_id"><%=rr.getId() %></span>
+							<span class="review_date"><%=rr.getRegdate() %></span>
 						</p>
 						<br>
 						<p class="review_content">
-							리뷰내용
+							<%=rr.getContents() %>
 						</p>
 					</div>
-					<div class="product_write_review">
-						<p>
-							<span class="review_id">dkdlel0611</span>
-							<span class="review_date">2021-06-11</span>
-						</p>
-						<br>
-						<p class="review_content">
-							리뷰내용
-						</p>
-					</div>
+<%			
+	}
+	}
+%>
 					
 				</div>				
 			</div>
+<!--문의창  -->
+<%
+String sortname = request.getParameter("sort");
+if(sortname==null) {
+	sortname = "no";
+}
+String keywordval = request.getParameter("keyword");
+if(keywordval==null) {
+	keywordval = "";
+}
+
+		QnaDao board = QnaDao.getInstance();
 			
+			//접속테스트 종료
+			//리스트 출력
+		
+		List<QnaVo> result = board.getBoardList(p_no);
+			
+		 
+
+%>
 			<div id="QnA">
 				<div class="QnA_title">
-					<h2 class="QnA">Q&A
-						<button type="button" id="write_QnA" onclick="location.href='write_QnA.jsp'">문의 내용 작성하기</button>
-					</h2>
+					<h2 class="QnA">Q&A</h2>
+					
+						<form id="write_QnA" name="write_QnA" method="post" action="write_QnA.jsp">
+						
+						<input type="hidden" name="p_no" value="<%=p_no %>">
+						<button type="submit" id="writeQnA" onclick="bbs_write();">문의 내용 작성하기</button>
+						</form>
+					
 				</div>
 				
 				<table>
@@ -137,29 +182,30 @@
 							<td class="QnA-title">제목</td>
 							<td class="QnA-user">작성자</td>
 							<td class="QnA-date">작성일</td>
-							<td class="QnA-vote">추천</td>
 							<td class="QnA-view">조회</td>
 						</tr>
 					</thead>
 					<tbody>
-					
+					<tr class="Qna_contents">
 						<!-- QnA 내용 -->
-						<tr class="">
-							<td class="QnA-no">11</td>
-							<td class="QnA-title">제목 입력</td>
-							<td class="QnA-user">홍길동</td>
-							<td class="QnA-date">2021-06-11</td>
-							<td class="QnA-vote">0</td>
-							<td class="QnA-view">0</td>
+			<%
+						if(result.size() == 0) {
+							out.println("<td colspan='4'>작성된 글이 없습니다<td/>");
+						}else {
+							for(int i=0; i<result.size(); i++) {
+						QnaVo row = result.get(i);			
+			%>
+						
+							<td class="QnA-no"><%= row.getNo() %></td>
+							<td class="QnA-title"><a href="QnA_show.jsp?pageNm=<%= row.getNo() %>"><%= row.getTitle() %></a></td>
+							<td class="QnA-user"><%= row.getWrite_id() %></td>
+							<td class="QnA-date"><%= row.getRegdate() %></td>
+							<td class="QnA-view"><%= row.getViews() %></td>
 						</tr>
-						<tr class="">
-							<td class="QnA-no">11</td>
-							<td class="QnA-title">제목 입력</td>
-							<td class="QnA-user">홍길동</td>
-							<td class="QnA-date">2021-06-11</td>
-							<td class="QnA-vote">0</td>
-							<td class="QnA-view">0</td>
-						</tr>
+			<%
+							}
+						}
+			%>
 						
 					</tbody>
 				</table>
@@ -173,4 +219,17 @@
 <script src="../js/jquery-3.6.0.min.js"></script>
 <script src="product_detail.js"></script>
 <script src="../main/header_footer.js"></script>
+<script>
+function bbs_write(){
+	ok = confirm("문의글 작성하시겠어요?");
+	if(ok==true){
+		var form = document.getElementById("write_QnA");
+		form.submit();
+	}
+}
+function reply_write() {
+	frm = document.getElementById("frm_write");
+	frm.submit();
+}
+</script>
 </html>

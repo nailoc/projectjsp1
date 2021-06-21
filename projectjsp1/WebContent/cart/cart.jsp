@@ -43,7 +43,6 @@
 			</div>
 				<div class="board_list_wrap">
 					<form name="delete_form" method="post" id="delete" action="cart_delete.jsp">
-					<button onclick="all_select();">전체선택</button>
 					<div class="board_list">
 						<div class="top">
 							<div class="num">상품 번호</div>
@@ -77,7 +76,7 @@
 						%>
 						
 							
-						<button type="submit" onclick="delete();">삭제</button>
+						<button id="delete" type="submit" onclick="delete();">삭제</button>
 						<!--
 						<div>
 							<div class="num">4</div>
@@ -121,10 +120,10 @@
 	</section>
 		
 		
+		<%@ include file="../main/footer.jsp" %>
 			
 		</div>    
 		
-		<%@ include file="../main/footer.jsp" %>
 </body>
 <script src="../js/jquery-3.6.0.min.js"></script>
 <script src="../main/header_footer.js"></script>

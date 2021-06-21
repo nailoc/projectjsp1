@@ -1,33 +1,35 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ page import="com.hk.jsp.dao.*" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ page import="com.hk.jsp.dao.*" %>
 <%@ page import="com.hk.jsp.vo.*" %>
-<%@	page import="java.util.List" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=UTF-8>
-<title>QnA</title>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="../main/header_footer.css"></link>
 <link rel="stylesheet" href="write_QnA.css"></link>
 <style></style>
+<title>문의 수정</title>
 </head>
 <body>
+<%
+	String no = request.getParameter("pageNm");  // 목록에서 선택한 번호
+	
+	QnaDao brddao = QnaDao.getInstance();
+	QnaVo rowshow = brddao.getBoardByNo(no); 
+	
+%>
 	<div class="wrapper">
 	
 		<%@ include file="../main/header.jsp" %>
-
-<%
-
-QnaDao board = QnaDao.getInstance();
-String id = (String)session.getAttribute("userID");
-String p_no = request.getParameter("p_no");
-%>		
+		
 		<section>
 			<div class="content_wrapper">	
-				<h2>상품 Q&A</h2>
+				<h2>문의 수정란</h2>
 				<div id="iboard-thumbnail-editor">
-					<form class="iboard-form" id="frm_write" method="POST" action="write_QnaPro.jsp" enctype="multipart/form-data">
-					<input type="hidden" name="p_no" value="<%=p_no %>">
+					<form class="iboard-form" id="frm_write" method="POST" action="Qna_editPro.jsp" enctype="multipart/form-data">
+					<input type="hidden" name="num" value="<%=rowshow.getNo() %>">
 					<input type="hidden" name="board_id" value="hidden_val">
 						<div class="iboard-attr-row iboard-attr-title">
 							<label class="attr-name" for="title">
@@ -35,16 +37,16 @@ String p_no = request.getParameter("p_no");
 								<span class="attr-required-text">*</span>
 							</label>
 							<div class="attr-value">
-								<input type="text" id="title" name="title" value="">
+								<input type="text" id="title" name="title" value="<%=rowshow.getTitle() %>">
 							</div>
 						</div>
-				
+						
 						<div class="iboard-attr-row iboard-attr-author">
 							<label class="attr-name" for="iboard-input-member-display">
 							<span class="field-name">작성자</span>
 							<span class="attr-required-text">*</span></label>
 							<div class="attr-value">
-								<input type="text" id="iboard-input-member-display" name="write_id" value="<%=id %>">
+								<input type="text" id="iboard-input-member-display" name="write_id" value="userid">
 							</div>
 						</div>
 				
@@ -63,16 +65,16 @@ String p_no = request.getParameter("p_no");
 							<div id="iboard-content-wrap">
 								
 								<div id="iboard-content-editor-container" class="editor-container">
-								<textarea class="editor-textarea" style="height:250px" cols="40" name="contents" id="iboard_content"></textarea>
+								<textarea class="editor-textarea" style="height:250px" cols="40" name="contents" id="iboard_content"><%=rowshow.getContents() %></textarea>
 								</div>
 							</div>
 						</div>
 				
 						<div class="iboard-attr-row iboard-attr-attach-1">
 							<label class="attr-name" for="iboard-input-file1">
-							<span class="field-name">첨부파일</span></label>
+							<span class="field-name">첨부파일 :  <%=rowshow.getAttach1() %></span></label>
 							<div class="attr-value">				
-								<input type="file" id="iboard-input-file1" name="attach1" value="">
+								<input type="file" id="iboard-input-file1" name="attach1" value="<%=rowshow.getAttach1() %>">
 							</div>
 						</div>
 						<hr>
@@ -83,14 +85,14 @@ String p_no = request.getParameter("p_no");
 							</div>
 							
 							<div class="right">
-								<button type="button" onclick="bbs_write();">저장하기</button>
+								<button type="button" onclick="bbs_write(<%=no %>);">저장하기</button>
 							</div>
 						</div>
 			
 					</form>
 		
 				</div>
-	
+
 			</div>
 			
 		</section>
@@ -98,9 +100,20 @@ String p_no = request.getParameter("p_no");
 		<%@ include file="../main/footer.jsp" %>
 	</div>
 
-</body>
+
+
+
 <script src="../js/jquery-3.6.0.min.js"></script>
 <script src="../main/header_footer.js"></script>
 <script src="../js/ckeditor.js"></script>
-<script src="write_QnA.js"></script>
+
+<script>
+
+	// 글쓰기
+	function bbs_write() {
+		frm = document.getElementById("frm_write");
+		frm.submit();
+	}
+</script>
+</body>
 </html>

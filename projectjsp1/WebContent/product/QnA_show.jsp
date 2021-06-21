@@ -10,7 +10,7 @@ String pm = request.getParameter("pageNm");
 <title>공지사항 <%=pm %>번</title>
 <link rel="stylesheet" href="css/style.css"></link>
 <link rel="stylesheet" href="../main/header_footer.css"></link>
-<link rel="stylesheet" href="noticeshow.css"></link>
+<link rel="stylesheet" href="Qna_show.css"></link>
 <style></style>
 </head>
 <body>
@@ -21,17 +21,17 @@ String pm = request.getParameter("pageNm");
 	
 <%
 String no = request.getParameter("pageNm");  // 목록에서 선택한 번호
-BoardDao brddao = BoardDao.getInstance();
+QnaDao brddao = QnaDao.getInstance();
 //조회수를 증가
 brddao.increaseBoardNo(no);
-
-BoardVo rowshow = brddao.getBoardByNo(no);
+	
+QnaVo rowshow = brddao.getBoardByNo(no);
 	
 %>	
        <section>
 	<div class="board_wrap">
 		<div class="board_title">
-			<strong>공지사항</strong>
+			<h2>공지사항</h2>
 			<p>공지사항을 빠르고 정확하게 안내 드립니다.</p>		
 		</div>
 		<div class="board_view_wrap">
@@ -47,7 +47,7 @@ BoardVo rowshow = brddao.getBoardByNo(no);
 					</dl>
 					<dl>
 						<dt>글쓴이</dt>
-						<dd><%=rowshow.getWrite_name() %></dd>
+						<dd><%=rowshow.getWrite_id() %></dd>
 					</dl>
 					
 					<dl>
@@ -67,35 +67,21 @@ BoardVo rowshow = brddao.getBoardByNo(no);
 			</div>
 			
 			<div class="bt_wrap">	
-				<button onclick="location.href='notice.jsp'">목록</button>
-				
-				<%
-String id = (String)session.getAttribute("userid");
-
-
-	if(id == null) {
-	
-
-	}else if(id.equals("admin")){
-%>
+			
+				<button onclick="location.href='product_detail.jsp?p_no=<%=rowshow.getP_no() %>'">목록</button>
 				<div class="btn_right">	
 					<button onclick="edit(<%=no %>);">수정</button>
 					<button id="del" onclick="delnotice(<%=no %>);">삭제</button>
 				</div>
-				<%
-}else {}
-
-%>
 			</div>
-
 	</div>
 	</div>
 
 	</section>
-		<%@ include file="../main/footer.jsp" %>
 	</div>
 	
 		
+		<%@ include file="../main/footer.jsp" %>
 	
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -106,7 +92,7 @@ String id = (String)session.getAttribute("userid");
 function delnotice(no) {
 	var chk = confirm("정말 삭제하시겠습니까?");
 	if (chk) {
-		location.href='notice_deletePro.jsp?pageNm='+no;
+		location.href='Qna_deletePro.jsp?pageNm='+no;
 		}
 	 
 	}
@@ -114,7 +100,7 @@ function delnotice(no) {
 function edit(no) {
 	var chk = confirm("수정하시겠습니까?");
 	if (chk) {
-		location.href='notice_edit.jsp?pageNm='+no;
+		location.href='Qna_edit.jsp?pageNm='+no;
 		}
 }
 </script>

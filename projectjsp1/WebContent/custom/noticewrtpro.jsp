@@ -18,7 +18,7 @@
 			//String ck_contents = request.getParameter("contents");
 		
 			// 파일을 업로드 하는 경우 cos.jar 사용해서 전송값을 저장
-			String uploadPath = "C:\\workspace\\teamproject2\\WebContent\\upload";
+			String uploadPath = "C:\\Users\\admin\\git\\projectjsp1\\projectjsp1\\WebContent\\upload";
 			int maxSize = 1024*1024*10; // 10메가 - 바이트기준으로  
 			MultipartRequest multi = new MultipartRequest(request, 
 			                                      uploadPath, 

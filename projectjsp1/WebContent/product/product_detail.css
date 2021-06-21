@@ -195,3 +195,9 @@ td.QnA-user {
 td.QnA-date {
 	width: 120px;
 }
+#write_QnA {
+	text-align: right;
+}
+.Qna_contents { 
+	text-align: center;
+}

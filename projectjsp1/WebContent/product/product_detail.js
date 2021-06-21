@@ -33,16 +33,11 @@ function show_write_review() {
 	$("div.write_review").show();
 }
 
-function cart_add(id){
-	if(id==null){
-		alert("로그인이 되어있지 않습니다. 로그인 해주세요.");
-		location.href="../login/login.jsp";
-	}else{
-		ok = confirm("장바구니에 담으시겠습니까?","");
-		if(ok==true){
-			var form = document.getElementById("product_form");
-			form.submit();
-		}
+function cart_add(){
+	ok = confirm("장바구니에 담으시겠습니까?","");
+	if(ok==true){
+		var form = document.getElementById("product_form");
+		form.submit();
 	}
 }
 

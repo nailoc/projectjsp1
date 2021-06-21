@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.hk.jsp.vo.BoardVo;
 import com.hk.jsp.vo.PopVo;
 
 public class PopDao {
@@ -153,16 +154,16 @@ public class PopDao {
 		int rst=0;
 		getConnect();
 		StringBuffer sb = new StringBuffer("");
-		sb.append("insert into pop (no,category, title,write_name,contents,write_id,regdate,attach1, attach2)");
+		sb.append("insert into pop (no,category, title,contents,write_id,write_name,regdate,attach1, attach2)");
 		sb.append("\n values (?, ?, ?, ?,?,?, ?,?,?) ");
 		String sql = sb.toString();
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, getNext());
 		pstmt.setString(2, brdvo.getCategory());
 		pstmt.setString(3, brdvo.getTitle());
-		pstmt.setString(4, brdvo.getWrite_name());
-		pstmt.setString(5, brdvo.getContents());
-		pstmt.setString(6, brdvo.getWrite_id());
+		pstmt.setString(4, brdvo.getContents());
+		pstmt.setString(5, brdvo.getWrite_id());
+		pstmt.setString(6, brdvo.getWrite_name());
 		pstmt.setString(7, getDate());
 		pstmt.setString(8, brdvo.getAttach1());
 		pstmt.setInt(9, 1);
@@ -225,13 +226,15 @@ public class PopDao {
 		getConnect();
 		
 		StringBuffer sb = new StringBuffer("");
-		sb.append("update pop set title=? ,contents=?  where no=?");
+		sb.append("update board set title=? ,category=? contents=? ,attach1=? where no=?");
 		String sql = sb.toString();
 		pstmt = conn.prepareStatement(sql);
 
 		pstmt.setString(1, bVo.getTitle());
-		pstmt.setString(2, bVo.getContents());
-		pstmt.setInt(3, bVo.getNo());
+		pstmt.setString(2, bVo.getCategory());
+		pstmt.setString(3, bVo.getContents());
+		pstmt.setString(4, bVo.getAttach1());
+		pstmt.setInt(5, bVo.getNo());
 		
 		int res = pstmt.executeUpdate();
 		

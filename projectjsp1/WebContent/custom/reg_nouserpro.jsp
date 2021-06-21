@@ -58,7 +58,7 @@
 		if(result==1) {
 			session.setAttribute("userid", no);
 			out.println("<script>alert('비회원 주문 성공'); location.href='../cart/order_list_show.jsp'</script>");
-			
+			session.invalidate();
 		}else {
 			response.sendRedirect("regorder.jsp");
 		}

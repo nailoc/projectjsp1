@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page import="com.hk.jsp.dao.*" %>
+<%@ page import="com.hk.jsp.vo.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,11 +23,11 @@ String pm = request.getParameter("pageNm");
 	
 <%
 String no = request.getParameter("pageNm");  // 목록에서 선택한 번호
-BoardDao brddao = BoardDao.getInstance();
+PopDao brddao = PopDao.getInstance();
 //조회수를 증가
 brddao.increaseBoardNo(no);
 
-BoardVo rowshow = brddao.getBoardByNo(no);
+PopVo rowshow = brddao.getBoardByNo(no);
 	
 %>	
        <section>
@@ -44,6 +46,10 @@ BoardVo rowshow = brddao.getBoardByNo(no);
 					<dl>
 						<dt>번호</dt>
 						<dd><%=rowshow.getNo() %></dd>
+					</dl>
+					<dl>
+						<dt>분류</dt>
+						<dd><%=rowshow.getCategory() %></dd>
 					</dl>
 					<dl>
 						<dt>글쓴이</dt>
@@ -65,11 +71,11 @@ BoardVo rowshow = brddao.getBoardByNo(no);
 				</div>
 				
 			</div>
-			
+
 			<div class="bt_wrap">	
-				<button onclick="location.href='notice.jsp'">목록</button>
-				
-				<%
+			
+				<button onclick="location.href='custom.jsp'">목록</button>
+<%
 String id = (String)session.getAttribute("userid");
 
 
@@ -77,17 +83,18 @@ String id = (String)session.getAttribute("userid");
 	
 
 	}else if(id.equals("admin")){
-%>
+%>	
+				
 				<div class="btn_right">	
 					<button onclick="edit(<%=no %>);">수정</button>
 					<button id="del" onclick="delnotice(<%=no %>);">삭제</button>
 				</div>
-				<%
+			
+			<%
 }else {}
 
 %>
-			</div>
-
+</div>
 	</div>
 	</div>
 
@@ -106,7 +113,7 @@ String id = (String)session.getAttribute("userid");
 function delnotice(no) {
 	var chk = confirm("정말 삭제하시겠습니까?");
 	if (chk) {
-		location.href='notice_deletePro.jsp?pageNm='+no;
+		location.href='custom_deletePro.jsp?pageNm='+no;
 		}
 	 
 	}
@@ -114,7 +121,7 @@ function delnotice(no) {
 function edit(no) {
 	var chk = confirm("수정하시겠습니까?");
 	if (chk) {
-		location.href='notice_edit.jsp?pageNm='+no;
+		location.href='custom_edit.jsp?pageNm='+no;
 		}
 }
 </script>

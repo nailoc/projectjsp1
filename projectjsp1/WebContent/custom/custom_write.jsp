@@ -30,12 +30,17 @@
 							</div>
 						</div>
 						<div class="iboard-attr-row iboard-attr-title">
-							<label class="attr-name" for="title">
+							<label class="attr-name" for="category">
 								<span class="field-name">분류</span>
 								<span class="attr-required-text">*</span>
 							</label>
 							<div class="attr-value">
-								<input type="text" id="title" name="title" value="">
+								    <select name="category" id="title">
+									        <option value="회원정보">회원 정보</option>
+									        <option value="주문">주문</option>
+									        <option value="배송">배송</option>
+									        <option value="어떻게해">어떻게해</option>
+    								</select>
 							</div>
 						</div>
 				

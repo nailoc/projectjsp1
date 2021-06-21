@@ -1,0 +1,51 @@
+section {
+	width: 1900px;
+	padding: 250px 0;
+}
+table {
+	width: 1600px;
+	margin: 0 auto;
+	border-collapse: collapse;
+	text-align: center;
+}
+table tr#menu td {
+	font-size: 18px;
+	font-weight: bold;
+	height: 40px;
+	border-bottom: 3px solid #000000;
+}
+table tr#content td {
+	font-size: 18px;
+	height: 40px;
+	border-bottom: 1px solid #cccccc;
+}
+td#id {
+	width: 100px;
+}
+td#name {
+	width: 100px;
+}
+td#order_num {
+	width: 150px;
+}
+td#phone_num {
+	width: 150px;
+}
+td#post {
+	width: 100px;
+}
+td#addr1 {
+	width: 400px;
+}
+td#addr2 {
+	width: 150px;
+}
+td#cnt {
+	width: 100px;
+}
+td#price {
+	width: 100px;
+}
+td#date {
+	width: 250px;
+}

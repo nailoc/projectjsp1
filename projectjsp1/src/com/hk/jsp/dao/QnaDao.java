@@ -9,8 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.hk.jsp.vo.BoardVo;
-import com.hk.jsp.vo.QnAVo;;
+
+import com.hk.jsp.vo.QnaVo;;
 
 public class QnaDao {
 	//접속정보를 정의 -> 전역변수성격
@@ -101,25 +101,22 @@ public class QnaDao {
 			}
 			
 			//게시글 목록 출력
-			public List<QnAVo> getBoardList(String sort, String keyword) throws Exception {
+			public List<QnaVo> getBoardList(String no) throws Exception {
 				//정렬변수 sort
 				//검색어변수 keyword
-				List<QnAVo> rst = new ArrayList<QnAVo>();
+				List<QnaVo> rst = new ArrayList<QnaVo>();
 				getConnect();
 				//sql
-				String sql = "select no, title, contents, write_name, "
-						+ "date_format(regdate,'%Y-%m-%d') as regdate, "
-						+ "views from qna where title like '%"+keyword+"%' "
-						+ "OR contents like '%"+keyword+"%' "
-						+ "OR write_name like '%"+keyword+"%' "  
-						+ "order by "+sort+ " desc";
+				String sql = String.format("select no, title, contents, write_id, "
+										+ "regdate, "
+										+ "views from qna where p_no='%s'",no);
 				rs = stmt.executeQuery(sql);
 				while(rs.next()) {
-					QnAVo row = new QnAVo();
+					QnaVo row = new QnaVo();
 					row.setNo(rs.getInt("no"));
 					row.setTitle(rs.getString("title"));
 					row.setContents(rs.getString("contents"));
-					row.setWrite_name(rs.getString("write_name"));
+					row.setWrite_id(rs.getString("write_id"));
 					row.setRegdate(rs.getString("regdate"));
 					row.setViews(rs.getInt("views"));
 					rst.add(row);
@@ -148,21 +145,21 @@ public class QnaDao {
 			
 			//게시글 작성 및 첨부파일 저장 noticewrtpro
 			// noteicewrtpro.jsp 데이터 vo 저장
-			public int saveBoard(QnAVo brdvo) throws Exception {
+			public int saveBoard(QnaVo brdvo) throws Exception {
 				int rst=0;
 				getConnect();
 				StringBuffer sb = new StringBuffer("");
-				sb.append("insert into qna (no,title,write_name,contents,write_id,regdate,attach2)");
-				sb.append("\n values (?, ?, ?, ?,?,?, ?,?) ");
+				sb.append("insert into qna (no,title,write_id,contents,p_no,regdate,attach2)");
+				sb.append("\n values (?, ?, ?, ?,?,?, ?) ");
 				String sql = sb.toString();
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, getNext());
 				pstmt.setString(2, brdvo.getTitle());
-				pstmt.setString(3, brdvo.getWrite_name());
+				pstmt.setString(3, brdvo.getWrite_id());
 				pstmt.setString(4, brdvo.getContents());
-				pstmt.setString(6, brdvo.getWrite_id());
-				pstmt.setString(7, getDate());
-				pstmt.setInt(8, 1);
+				pstmt.setString(5, brdvo.getP_no());
+				pstmt.setString(6, getDate());
+				pstmt.setInt(7, 1);
 				
 				rst = pstmt.executeUpdate();
 				closeDB();
@@ -171,8 +168,8 @@ public class QnaDao {
 
 			
 			// noticeshow.jsp 게시물 읽기
-			public QnAVo getBoardByNo(String no) throws Exception {
-				QnAVo rst = new QnAVo();
+			public QnaVo getBoardByNo(String no) throws Exception {
+				QnaVo rst = new QnaVo();
 				getConnect();
 				String sql = String.format("select * from qna where no='%s'",no);
 				
@@ -181,10 +178,10 @@ public class QnaDao {
 				
 					rst.setNo(rs.getInt("no"));
 					rst.setTitle(rs.getString("title"));
-					rst.setWrite_name(rs.getString("write_name"));
+					rst.setWrite_id(rs.getString("write_id"));
 					rst.setRegdate(rs.getString("regdate"));
 					rst.setViews(rs.getInt("views"));
-				
+					rst.setP_no(rs.getString("p_no"));
 					rst.setContents(rs.getString("contents"));
 					rst.setAttach1(rs.getString("attach1"));
 				}
@@ -217,7 +214,7 @@ public class QnaDao {
 			
 			//글 수정
 			
-			public int editBoard(QnAVo bVo) throws Exception {
+			public int editBoard(QnaVo bVo) throws Exception {
 				
 				getConnect();
 				

@@ -17,7 +17,7 @@
 				<img src="../images/logo1.png" alt="logo" id="logo1">
 			</a>
 			<ul id="headmenu">
-				<li><a href="#">공지사항</a></li>
+				<li><a href="../custom/notice.jsp">공지사항</a></li>
 				<li><a href="../custom/custom.jsp" >고객센터</a></li>
 				<li><a href="../cart/cart.jsp">장바구니</a>
 				<li id="login"><a href="../login/login.jsp">로그인</a></li>
@@ -34,9 +34,9 @@
 		<div id="header2">
          <ul id="product_menu">
                  <li id="home"><a href="../main/main.jsp">홈</a></li>
-              <li><a href="#">상의</a></li>
-              <li><a href="#">하의</a></li>
-              <li><a href="#">액세서리</a></li>
+              <li><a href="../product/product_shirt.jsp">상의</a></li>
+              <li><a href="../product/product_denim_pants.jsp">하의</a></li>
+              <li><a href="../product/product_accessary.jsp">액세서리</a></li>
            </ul>            
       </div>
    </header>
@@ -44,18 +44,18 @@
    <div class="sub_product_wrap">
       <div class="sub_wrap">
               <div class="sub_product">
-                  <a href="../product/product_shirt.jsp">셔츠</a><br>
+                <a href="../product/product_shirt.jsp">셔츠</a><br>
                 <a href="../product/product_t_shirt.jsp">티셔츠</a><br>
                 <a href="../product/product_outer.jsp">아우터</a><br>
              </div>                 
               <div class="sub_product">
-                  <a href="../product/product_denim_pants.jsp">데님팬츠</a><br>
+                <a href="../product/product_denim_pants.jsp">데님팬츠</a><br>
                 <a href="../product/product_cotton_pants.jsp">코튼팬츠</a><br>
                 <a href="../product/product_short_slacks.jsp">숏팬츠, 슬랙스</a><br>
                 <a href="../product/product_etc.jsp">기타</a><br>
             </div>            	
            	<div class="sub_product">
-               	<a href="#">액세서리</a><br>
+               	<a href="../product/product_accessary.jsp">액세서리</a><br>
             </div>
        </div>
 	</div>
